@@ -1,21 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { View, Text } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
 
-export default function App() {
+// Routes
+import Routes from './src/routes/index';
+
+
+// Auth Provider
+import { AuthProvider } from "./src/contexts/auth.js"
+
+function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer style={{margin: 0}}>
+        <AuthProvider>
+          <Routes/>
+        </AuthProvider>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
