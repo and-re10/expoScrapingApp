@@ -23,7 +23,7 @@ import { useFonts } from "expo-font"
 // App Loading
 import AppLoading from 'expo-app-loading';
 
-import axios from "axios";
+import productsApi from "../../api/ProductsApi"
 
 export default function ContactScreen({ navigation }) {
 
@@ -47,7 +47,7 @@ export default function ContactScreen({ navigation }) {
 
     useEffect(() => {
         async function getAllproducts(){
-            const response = await axios.get('https://ba28-2a02-1811-3602-f800-98c0-128a-49dc-1600.ngrok.io/all-products');
+            const response = await productsApi.get('/all-products');
             console.log(response.data);
             setProducts(response.data);
         }

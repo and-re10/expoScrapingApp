@@ -71,14 +71,14 @@ export default function HomeScreen({ navigation }) {
     ];
 
     async function getAllproducts(){
-        const response = await axios.get('https://ba28-2a02-1811-3602-f800-98c0-128a-49dc-1600.ngrok.io/all-products');
+        const response = await productsApi.get('/all-products');
         console.log(response.data);
         setProducts(response.data); 
         // console.warn(response.data);
     }
 
     const scrapeProduct = async () => {
-        const response = await axios.post('https://ba28-2a02-1811-3602-f800-98c0-128a-49dc-1600.ngrok.io/add-product', {
+        const response = await productsApi.post('/add-product', {
         ProductURL: url,
         magasin: magasin
         });
