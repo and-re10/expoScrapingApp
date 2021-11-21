@@ -4,7 +4,7 @@ import { View, Text, TouchableOpacity, ScrollView, Image, TextInput } from 'reac
 //Auth Context
 import AuthContext from '../../contexts/auth';
 
-import axios from "axios";
+import productsApi from "../../api/ProductsApi";
 
 // Fonts
 // Font name: rubik 
